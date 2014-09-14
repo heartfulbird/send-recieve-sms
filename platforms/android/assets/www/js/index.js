@@ -49,6 +49,31 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+
+    successCallback: function (result) {
+        alert('sent');
+    },
+
+    failureCallback: function (error) {
+        alert('error: ' + error);
+    },
+
+    support_recieve: false,
+
+    if_support: function () {
+        app.logger('support recieve');
+        app.support_recieve = true;
+    },
+
+    info: function (msg) {
+        app.logger(msg)
+    },
+
+    recieveResult: function (msg) {
+        alert('recieved sms: ' + msg);
+        smsplugin.stopReception(app.info('correct stoping'), app.failureCallback(error));
+    },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -64,11 +89,27 @@ var app = {
         // send - recieve
         var smsplugin = cordova.require("info.asankan.phonegap.smsplugin.smsplugin");
 
+        smsplugin.isSupported(app.if_support(), app.failureCallback(error));
 
-        $('#send_sms').on('click', function () {
-            app.logger('click');
-            smsplugin.send('+79522830722', 'Hi!', '', function (result) {app.logger('sent');}, function (msg) { app.logger(msg);});
-        });
+        if (app.support_recieve) {
+            $('#send_sms').on('click', function () {
+                app.logger('click');
+                smsplugin.startReception(function (msg) {
+                    alert('recieved sms: '+ msg);
+                    smsplugin.stopReception(app.info('correct stoping'), app.failureCallback(error));
+                }, function () {
+                    app.failureCallback(error);
+                    smsplugin.stopReception(app.info('correct stoping'), app.failureCallback(error));
+                });
+
+                smsplugin.send('+79522830722', 'Hi!', '', function (result) {
+                    app.logger('sent');
+
+                }, function (msg) {
+                    app.logger(msg);
+                });
+            });
+        }
 
 
 
