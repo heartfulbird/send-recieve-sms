@@ -51,8 +51,12 @@
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/spec/lib/jasmine-1.2.0/MIT.LICENSE \
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.css \
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/js/index.js \
+/home/stas/projects/sms-send-recive/platforms/android/assets/www/js/debug.js \
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/js/jquery-2.1.0.min.js \
-/home/stas/projects/sms-send-recive/platforms/android/assets/www/js/functions.js \
+/home/stas/projects/sms-send-recive/platforms/android/assets/www/js/app_obj.js \
+/home/stas/projects/sms-send-recive/platforms/android/assets/www/js/add_plugins.js \
+/home/stas/projects/sms-send-recive/platforms/android/assets/www/js/registration.js \
+/home/stas/projects/sms-send-recive/platforms/android/assets/www/js/app.js \
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/img/logo.png \
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/res/icon \
 /home/stas/projects/sms-send-recive/platforms/android/assets/www/res/screen \
