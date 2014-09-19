@@ -49,4 +49,3 @@ app.receivedEvent = function (id) {
   app.whatToDo();
 };
 
-//check3
